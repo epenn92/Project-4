@@ -1,0 +1,1 @@
+web: gunicorn subscription_project.wsgi --log-file -
