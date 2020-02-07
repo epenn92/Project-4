@@ -25,7 +25,7 @@ export default class AllUsers extends Component {
             {this.state.users.map((user) => {
             return (
                 <div>
-                <Link to='api/v1/user/:userId'><h3>User: {user.name}</h3> </Link>
+                <Link to={`api/v1/user/${user.id}`}><h3>User: {user.name}</h3> </Link>
                 <h3>Age: {user.age}</h3>
                 <h3>Likes: {user.likes}</h3>
     

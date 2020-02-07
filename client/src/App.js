@@ -3,16 +3,23 @@ import './App.css'
 import { BrowserRouter as Router, Switch, Link, Route, Redirect } from 'react-router-dom'
 import AllUsers from './components/AllUsers.jsx'
 import NewUser from './components/NewUser.jsx'
-import SingleUser from './components/SingleUser'
-
+import SingleUser from './components/SingleUser.jsx'
+import axios from 'axios'
 
 
 class App extends Component {
 
-  // componentDidMount = () => {
+  state = {
+    subscriptions: []
+  }
 
-  //   <Redirect to='/api/v1/user'></Redirect>
-  // }
+  componentDidMount = () => {
+    axios.get('/api/v1/subscription')
+      .then((res) => {
+        this.setState({ subscriptions: res.data })
+        console.log(this.state.subscriptions)
+      })
+  }
 
   render() {
     return (

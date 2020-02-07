@@ -14,6 +14,7 @@ export default class NewUser extends Component {
         }
     }
 
+    
     onCreateUserSubmit = (event) => {
         event.preventDefault()
         axios.post('/api/v1/user/', this.state.newUser)
