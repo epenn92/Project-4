@@ -13,7 +13,7 @@ class User(models.Model):
     # subscription = models.ManyToManyField(Subscription, related_name='subscription_users')
 
     def __str__(self):
-        return f'{self.name} {self.age} {self.likes} {self.subscription}'
+        return f'{self.name} {self.age}years old  {self.likes}'
 
 
 class Subscription(models.Model):
@@ -44,7 +44,7 @@ class Subscription(models.Model):
     user = models.ManyToManyField(User, related_name='user_subscriptions')
 
     def __str__(self):
-        return f'{self.sub_name} {self.price} {self.user} {self.rating} {self.type_of_service}'
+        return f'{self.sub_name} {self.price} {self.average_rating} {self.type_of_service}'
 
 
 class Review(models.Model):
