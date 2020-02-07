@@ -3,14 +3,16 @@ import './App.css'
 import { BrowserRouter as Router, Switch, Link, Route, Redirect } from 'react-router-dom'
 import AllUsers from './components/AllUsers.jsx'
 import NewUser from './components/NewUser.jsx'
+import SingleUser from './components/SingleUser'
 
 
 
 class App extends Component {
 
-  componentDidMount = () => {
-    <Redirect to='/api/v1/user'></Redirect>
-  }
+  // componentDidMount = () => {
+
+  //   <Redirect to='/api/v1/user'></Redirect>
+  // }
 
   render() {
     return (
@@ -18,8 +20,10 @@ class App extends Component {
         <div>
           <Router>
             <Switch>
-              <Route exact path='/api/v1/user' component={AllUsers} />
+              <Route exact path='/' component={AllUsers} />
+              <Route exact path='/api/v1/allUsers' component={AllUsers} />
               <Route exact path='/api/v1/newUser' component={NewUser} />
+              <Route exact path='/api/v1/user/:userId' component={SingleUser} />
             </Switch>
           </Router>
         </div>
