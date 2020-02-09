@@ -5,6 +5,10 @@ import AllUsers from './components/AllUsers.jsx'
 import NewUser from './components/NewUser.jsx'
 import SingleUser from './components/SingleUser.jsx'
 import axios from 'axios'
+import AllSubscriptions from './components/AllSubscriptions.jsx'
+import AllReviews from './components/AllReviews.jsx'
+import NewReview from './components/NewReview.jsx'
+
 
 
 class App extends Component {
@@ -17,7 +21,7 @@ class App extends Component {
     axios.get('/api/v1/subscription')
       .then((res) => {
         this.setState({ subscriptions: res.data })
-        console.log(this.state.subscriptions)
+        // console.log(this.state.subscriptions)
       })
   }
 
@@ -28,12 +32,18 @@ class App extends Component {
           <Router>
             <Switch>
               <Route exact path='/' component={AllUsers} />
-              <Route exact path='/api/v1/allUsers' component={AllUsers} />
-              <Route exact path='/api/v1/newUser' component={NewUser} />
-              <Route exact path='/api/v1/user/:userId' component={SingleUser} />
+              <Route exact path='/allUsers' component={AllUsers} />
+              <Route exact path='/newUser' component={NewUser} />
+              <Route exact path='/user/:userId' component={SingleUser} />
+              <Route exact path='/review' component={AllReviews} />
+              <Route exact path='/subscription' render={(props) => <AllSubscriptions {...props} subscriptions={this.state.subscriptions} />}
+              />
+              <Route exact path='/newReview' component={NewReview} />
+
             </Switch>
           </Router>
         </div>
+
       </div>
     )
 

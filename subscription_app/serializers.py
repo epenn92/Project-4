@@ -8,15 +8,19 @@ class ReviewSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class SubscriptionSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Subscription
-        fields = '__all__'
-
-
 class UserSerializer(serializers.ModelSerializer):
-    subscriptions = SubscriptionSerializer(many=True, read_only=True)
+    # subscriptions = SubscriptionSerializer(many=True, read_only=True)
+
+    # def get_user_name(self, instance):
 
     class Meta:
         model = User
-        fields = ('id', 'name', 'age', 'location', 'user_img', 'total_cost', 'likes', 'num_of_subs', 'subscriptions')
+        fields = ('id', 'name', 'age', 'location', 'user_img', 'total_cost', 'likes', 'num_of_subs', 'user_subscriptions')
+
+
+class SubscriptionSerializer(serializers.ModelSerializer):
+     user_subscriptions = UserSerializer(many=True, read_only=True)
+
+     class Meta:
+        model = Subscription
+        fields = '__all__'

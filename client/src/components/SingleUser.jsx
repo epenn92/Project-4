@@ -57,7 +57,7 @@ export default class SingleUser extends Component {
         return (
             <div>
                 {this.state.redirect === true ? <Redirect to='/' /> : null}
-                {this.state.redirect2 === true ? <Redirect to={`/api/v1/user/${this.props.match.params.userId}`} /> : null}
+                {this.state.redirect2 === true ? <Redirect to={`/user/${this.props.match.params.userId}`} /> : null}
                 {this.state.displayEdit === false 
                 ?
                 <div>
