@@ -10,7 +10,21 @@ export default class NewReview extends Component {
             subscription: '',
             rating: '',
             comment: ''
-        }
+        },
+        subscriptions: [],
+        users: []
+    }
+
+    componentDidMount = () => {
+        axios.get('api/v1/user')
+            .then((res) => {
+                this.setState({ users: res.data})
+            })
+        axios.get('api/v1/subscription')
+            .then((res) => { 
+                this.setState({ subscriptions: res.data})
+            })
+        
     }
 
     onCreateReviewSubmit = (event) => {
@@ -34,6 +48,8 @@ export default class NewReview extends Component {
     render() {
         return (
             <div>
+                {console.log(this.state.users)}
+                {console.log(this.state.subscriptions)}
                 {this.state.redirect === true ? <Redirect to='/api/v1/review' /> : null}
                 <form onSubmit={this.onCreateReviewSubmit}>
                     <input type="textarea" name='comment' value={this.state.newReview.comment} onChange={this.onChange} />

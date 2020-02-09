@@ -7,6 +7,10 @@ class ReviewSerializer(serializers.ModelSerializer):
         model = Review
         fields = '__all__'
 
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.fields['subscription'].queryset = Subscription.objects.none()
+
 
 class UserSerializer(serializers.ModelSerializer):
     # subscriptions = SubscriptionSerializer(many=True, read_only=True)
