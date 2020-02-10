@@ -80,3 +80,18 @@ body {
   background-color: silver;
   color: black;
 }
+
+.users {
+  margin-bottom: 50px;
+  list-style: none;
+}
+
+.users a {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+
+.userName {
+  font-size: 36px;
+}

@@ -28,16 +28,17 @@ export default class AllUsers extends Component {
             <h1>Current Users</h1>
             {this.state.users.map((user) => {
             return (
-                <div>
-                <Link to={`/user/${user.id}`}><h3>User: {user.name}</h3> </Link>
+                <div className='users'>
+                <Link to={`/user/${user.id}`}><h3 className='userName'>User: {user.name}</h3> </Link>
                 <h3>Age: {user.age}</h3>
                 <h3>Likes: {user.likes}</h3>
     
-                <Link to='/newUser'><button>Create New User</button></Link>
+                
                 {/* <AllSubscriptions subscriptions={this.state.subscriptions} /> */}
                 </div>
             )
             })}
+            <Link to='/newUser'><button>Create New User</button></Link>
         </div>
         )
     }
