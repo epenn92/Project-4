@@ -41,7 +41,7 @@ export default function AllSubscriptions(props) {
                         <h3>{subscription.billing_period}</h3>
                         <h3>{subscription.type_of_service}</h3>
                         <h3>{subscription.average_rating}</h3>
-                        <h3>{subscription.user.name}</h3>
+                        {/* <h3>{subscription.user.name}</h3> */}
                         </div>
                 )
             })}

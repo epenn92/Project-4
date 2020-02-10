@@ -11,9 +11,17 @@ export default class NewUser extends Component {
             location: '',
             user_img: '',
             likes: '',
-        }
+        },
+        subscriptions: []
+
     }
 
+    componentDidMount = () => {
+        axios.get('/api/v1/subscription')
+            .then((res) => {
+                this.setState({ subscriptions: res.data })
+            })
+    }
     
     onCreateUserSubmit = (event) => {
         event.preventDefault()
@@ -42,6 +50,7 @@ export default class NewUser extends Component {
                     <input type='text' name='location' value={this.state.newUser.location} onChange={this.onChange} />
                     <input type='text' name='user_img' value={this.state.newUser.user_img} onChange={this.onChange} />
                     <input type='text' name='likes' value={this.state.newUser.likes} onChange={this.onChange} />
+                    
                     <button type='submit'>Submit</button>
                 </form>
             </div>
