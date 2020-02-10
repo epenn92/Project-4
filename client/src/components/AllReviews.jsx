@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 export default class AllReviews extends Component {
 
@@ -20,8 +21,8 @@ export default class AllReviews extends Component {
                 <h1>All Reviews</h1>
                 {this.state.reviews.map((review) => {
                     return (
-                        <div>
-                            <h3>{review.id}</h3>
+                        <div className="reviews">
+                            <h3 className='reviewName'>{review.id}</h3>
                             <h3>{review.user}</h3>
                             <h3>{review.rating}</h3>
                             <h3>{review.comment}</h3>
@@ -31,7 +32,7 @@ export default class AllReviews extends Component {
                     )
                 })}
 
-                <button>Create New Review</button>
+                <Link to='/newReview'><button>Create New Review</button></Link>
             </div>
         )
     }

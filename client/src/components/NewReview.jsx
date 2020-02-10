@@ -50,7 +50,7 @@ export default class NewReview extends Component {
             <div>
                 {console.log(this.state.users)}
                 {console.log(this.state.subscriptions)}
-                {this.state.redirect === true ? <Redirect to='/api/v1/review' /> : null}
+                {this.state.redirect === true ? <Redirect to='/review' /> : null}
                 <form onSubmit={this.onCreateReviewSubmit}>
                     <input type="textarea" name='comment' value={this.state.newReview.comment} onChange={this.onChange} />
                     <span>User:</span>
@@ -63,9 +63,13 @@ export default class NewReview extends Component {
                         })}
                     </select>
                     <span>Subscription:</span>
-                    <select id='subscriptionSelect' selectedvalue={this.state.value} name='user' onChange={this.onChange}>
+                    <select id='subscriptionSelect' selectedvalue={this.state.value} name='subscription' onChange={this.onChange}>
                         <option value='None'>None</option>
-                        <option>{this.state.users.user_subscription} </option>
+                        {this.state.subscriptions.map((subscription) => {
+                            return(
+                                <option value={subscription.id}>{subscription.sub_name}</option>
+                            )
+                        })} 
                     </select>
                     <button type= 'submit'>Submit</button> 
                 </form>
