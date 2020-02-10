@@ -35,8 +35,8 @@ export default function AllSubscriptions(props) {
             <h1>Subscription Services</h1>
             {props.subscriptions.map((subscription) => {
                 return (
-                    <div>
-                        <h3>{subscription.sub_name}</h3>
+                    <div className='subs'>
+                        <h3 className='subName'>{subscription.sub_name}</h3>
                         <h3>{subscription.price}</h3>
                         <h3>{subscription.billing_period}</h3>
                         <h3>{subscription.type_of_service}</h3>
