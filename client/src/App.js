@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter as Router, Switch, Link, Route, Redirect } from 'react-router-dom'
 import AllUsers from './components/AllUsers.jsx'
@@ -27,7 +28,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='App'>
         <Navbar sticky='top' bg="dark" variant="dark">
           <Navbar.Brand href="/">Subscription App</Navbar.Brand>
           <Nav className="mr-auto">
@@ -42,19 +43,23 @@ class App extends Component {
         </Navbar>
 
 
-        <Navbar fixed='bottom' bg="dark" variant="dark">
-          <Navbar.Brand href="#home">Subscription App</Navbar.Brand>
-          <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-          </Nav>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-info">Search</Button>
-          </Form>
-        </Navbar>
-
+        <div className="footerSpace">.
+          <footer id='footer'>
+            <nav>
+              <ul className="footerOptions">
+                <li><p className="thanks">Thanks for visiting</p></li>
+                <li className="socialMedia">
+                  <button className="icon"><a href="https://twitter.com/LeagueOfLegends" className="fa fa-twitter"></a></button>
+                  <button className="icon"><a href="https://www.facebook.com/leagueoflegends/" className="fa fa-facebook"></a></button>
+                  <button className="icon"><a href="https://www.linkedin.com/company/riot-games/" className="fa fa-linkedin"></a></button>
+                  <button className="icon"><a href="https://github.com/topics/league-of-legends" className="fa fa-github"></a></button>
+                  <button className="icon"><a href="https://github.com/epenn92/Project-3" className="fa fa-rss"></a></button>
+                </li>
+                <li><p className="followUs">Follow us</p></li>
+              </ul>
+            </nav>
+          </footer>
+        </div>
         <div>
           <Router>
             <Switch>
