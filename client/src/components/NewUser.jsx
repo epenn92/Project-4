@@ -35,7 +35,7 @@ export default class NewUser extends Component {
     render() {
         return (
             <div>
-                {this.state.redirect === true ? <Redirect to='/api/v1/user' /> : null}
+                {this.state.redirect === true ? <Redirect to='/allUsers' /> : null}
                 <form onSubmit={this.onCreateUserSubmit}>
                     <input type='text' name="name" value={this.state.newUser.name} onChange={this.onChange} />
                     <input type='number' name='age' value={this.state.newUser.age} onChange={this.onChange} />
