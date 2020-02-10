@@ -12,3 +12,9 @@ This app benefits mostly users with multiple apps like Disney #, Xbox Game Pass 
 maybe 10 if you have twich subscriptions it really becomes a hassle to remember everything you're subbed to. People with only 1-2 subscriptions 
 won't have as much benefit as someone juggling more subscriptions.
 
+### Trello Link
+[Project 4 Trello Board](https://trello.com/b/VRyfmzFa/project-4)
+#### ERD
+![Project 4 ERD image](https://github.com/epenn92/Project-4/blob/master/images/ERD%20models.png "ERD image ")
+#### Wireframes
+![Project 4 Wireframes](https://github.com/epenn92/Project-4/blob/master/images/Subscription%20App%20Wireframe.png "Wireframe Image")
