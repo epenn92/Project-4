@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
+import { Form, Button } from 'react-bootstrap'
 
 export default class NewUser extends Component {
 
@@ -53,6 +54,24 @@ export default class NewUser extends Component {
                     
                     <button type='submit'>Submit</button>
                 </form>
+                <Form onSubmit={this.onCreateUserSubmit}>
+                    <input type='text' name="name" value={this.state.newUser.name} onChange={this.onChange} />>
+  <Form.Group controlId="formName">
+    <Form.Label>User Name</Form.Label>
+    <Form.Control type="text" placeholder="Enter your username" />
+  </Form.Group>
+
+  <Form.Group controlId="formBasicPassword">
+    <Form.Label>Password</Form.Label>
+    <Form.Control type="password" placeholder="Password" />
+  </Form.Group>
+  <Form.Group controlId="formBasicCheckbox">
+    <Form.Check type="checkbox" label="Check me out" />
+  </Form.Group>
+  <Button variant="primary" type="submit">
+    Submit
+  </Button>
+</Form>
             </div>
         )
     }
