@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { BrowserRouter as Router, Switch, Link, Route, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, } from 'react-router-dom'
 import AllUsers from './components/AllUsers.jsx'
 import NewUser from './components/NewUser.jsx'
 import SingleUser from './components/SingleUser.jsx'
@@ -10,7 +10,7 @@ import AllSubscriptions from './components/AllSubscriptions.jsx'
 import AllReviews from './components/AllReviews.jsx'
 import NewReview from './components/NewReview.jsx'
 import HomePage from './components/HomePage.jsx'
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap'
+import { Navbar, Nav } from 'react-bootstrap'
 
 class App extends Component {
 
