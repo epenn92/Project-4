@@ -53,9 +53,6 @@ class Subscription(models.Model):
 #     user_name = models.CharField(max_length=100)
 
 
-
-
-
 class Review(models.Model):
     RATINGS = (
         ('1', 'Awful'),

@@ -12,6 +12,7 @@ export default class NewUser extends Component {
             location: '',
             user_img: '',
             likes: '',
+            user_subscriptions: ''
         },
         subscriptions: []
 
@@ -45,15 +46,7 @@ export default class NewUser extends Component {
         return (
             <div>
                 {this.state.redirect === true ? <Redirect to='/allUsers' /> : null}
-                <form onSubmit={this.onCreateUserSubmit}>
-                    <input type='text' name="name" value={this.state.newUser.name} onChange={this.onChange} />
-                    <input type='number' name='age' value={this.state.newUser.age} onChange={this.onChange} />
-                    <input type='text' name='location' value={this.state.newUser.location} onChange={this.onChange} />
-                    <input type='text' name='user_img' value={this.state.newUser.user_img} onChange={this.onChange} />
-                    <input type='text' name='likes' value={this.state.newUser.likes} onChange={this.onChange} />
-                    
-                    <button type='submit'>Submit</button>
-                </form>
+
                 <Form onSubmit={this.onCreateUserSubmit}>
                     <Form.Group controlId="formName">
                         <Form.Label>User Name</Form.Label>
@@ -69,25 +62,23 @@ export default class NewUser extends Component {
                     </Form.Group>
                     <Form.Group controlId="formImage">
                         <Form.Label>Link to Image</Form.Label>
-                    <Form.Control type="text" name="image" value={this.state.newUser.user_img} onChange={this.onChange} placeholder="Image URL?" />
+                    <Form.Control type="text" name="user_img" value={this.state.newUser.user_img} onChange={this.onChange} placeholder="Image URL?" />
                     </Form.Group>
-                    <Form.Group controlId="exampleForm.ControlSelect2">
-                     <Form.Label>Example multiple select</Form.Label>
-                      <Form.Control as="select" multiple>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                    <Form.Group controlId="formLikes">
+                     <Form.Label>Likes:</Form.Label>
+                      <Form.Control as="select" multiple name="likes" selectedvalue={this.state.newUser.likes}>
+                        <option value="Tailored towards movies">Movies</option>
+                        <option value='Tailored towards Video games'>Video Games</option>
+                        <option value='Tailored towards Television Shows'>TV/Shows</option>
+                        <option value='Tailored towards Cloud based data services'>Cloud services</option>
+                        <option value='Tailored towards software apps like office'>Software Services</option>
                         </Form.Control>
                     </Form.Group>
-  <Form.Group controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
-  <Button variant="primary" type="submit">
-    Submit
-  </Button>
-</Form>
+                    {/* <Form.Group controlId="formSub">
+                        <Form.Label>User Subscription</Form.Label>
+                    <Form.Control type="text" name="user_subscriptions" value={this.state.newUser.user_subscriptions} onChange={this.onChange} placeholder="Enter your subscription service" />
+                    </Form.Group> */}
+                        <Button variant="primary" type="submit"> Submit </Button></Form>
             </div>
         )
     }

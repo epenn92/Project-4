@@ -19,7 +19,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'name', 'age', 'location', 'user_img', 'total_cost', 'likes', 'num_of_subs', 'user_subscriptions')
+        fields = ('id', 'name', 'age', 'location', 'user_img', 'total_cost', 'likes', 'num_of_subs')
 
 
 class SubscriptionSerializer(serializers.ModelSerializer):
