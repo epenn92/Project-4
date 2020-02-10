@@ -23,6 +23,7 @@ export default class AllUsers extends Component {
     render() {
         return (
         <div>
+            
             {console.log(this.state.users)}
             <h1>Current Users</h1>
             {this.state.users.map((user) => {
