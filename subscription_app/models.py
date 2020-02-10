@@ -41,7 +41,7 @@ class Subscription(models.Model):
     type_of_service = models.CharField(max_length=100, choices=TYPE_OF_SERVICE, default='Unsure')
     active = models.BooleanField(default=False)
     average_rating = models.PositiveIntegerField(default=5)
-    user = models.ManyToManyField(User, related_name='user_subscriptions')
+    user = models.ManyToManyField(User, related_name='user_subscriptions', through='Review')
 
     def __str__(self):
         return f'{self.sub_name} {self.price} {self.average_rating} {self.type_of_service}'
