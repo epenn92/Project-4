@@ -49,11 +49,11 @@ class App extends Component {
               <ul className="footerOptions">
                 <li><p className="thanks">Thanks for visiting</p></li>
                 <li className="socialMedia">
-                  <button className="icon"><a href="https://twitter.com/LeagueOfLegends" className="fa fa-twitter"></a></button>
-                  <button className="icon"><a href="https://www.facebook.com/leagueoflegends/" className="fa fa-facebook"></a></button>
-                  <button className="icon"><a href="https://www.linkedin.com/company/riot-games/" className="fa fa-linkedin"></a></button>
+                  <button className="icon"><a href="https://twitter.com/Netflix" className="fa fa-twitter"></a></button>
+                  <button className="icon"><a href="https://www.facebook.com/hulu/" className="fa fa-facebook"></a></button>
+                  <button className="icon"><a href="https://www.linkedin.com/company/twitch/" className="fa fa-linkedin"></a></button>
                   <button className="icon"><a href="https://github.com/topics/league-of-legends" className="fa fa-github"></a></button>
-                  <button className="icon"><a href="https://github.com/epenn92/Project-3" className="fa fa-rss"></a></button>
+                  <button className="icon"><a href="https://github.com/epenn92/Project-4" className="fa fa-rss"></a></button>
                 </li>
                 <li><p className="followUs">Follow us</p></li>
               </ul>
