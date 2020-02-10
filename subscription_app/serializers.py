@@ -23,8 +23,8 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class SubscriptionSerializer(serializers.ModelSerializer):
-     user_subscriptions = UserSerializer(many=True, read_only=True)
+    user_subscriptions = UserSerializer(many=True, read_only=True)
 
-     class Meta:
+    class Meta:
         model = Subscription
         fields = '__all__'
